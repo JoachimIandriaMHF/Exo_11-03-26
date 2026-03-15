@@ -1,0 +1,30 @@
+ALGORITHME forme_e
+
+VARIABLES
+  i, n : ENTIERS
+  F : ENTIER
+  S : REEL
+
+DEBUT
+  AFFICHER("Entrer la valeur de n :")
+  LIRE(n)
+
+  SI n < 0 ALORS
+    AFFICHER("Erreur : n doit être positif ou nul.")
+  SINON
+    // Initialisation
+    S <- 1    
+    F <- 1       // 0! = 1
+    
+    SI n = 0 ALORS
+      AFFICHER("Somme = ", S)
+    SINON
+      POUR i DE 1 À n FAIRE
+        F <- F * i      // Calcule la factorielle i! à chaque étape
+        S <- S + 1/F    // Ajoute 1/i! à la somme
+      FINPOUR
+      
+      AFFICHER("Somme = ", S)
+    FINSI
+  FINSI
+FIN
